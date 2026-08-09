@@ -204,7 +204,7 @@ function paginaHome() {
     + '<a class="btn btn-grande" href="' + WA_TESTE + '" rel="noopener" target="_blank">Quero meu teste grátis</a>\n'
     + '<a class="btn btn-contorno" href="/planos/">Ver planos</a>\n'
     + '</div>\n'
-    + '<p class="hero-nota">Sem fidelidade · Ativação rápida · Suporte todos os dias</p>\n'
+    + '<p class="hero-nota">Teste grátis · Sem fidelidade · Ativação rápida · Suporte todos os dias</p>\n'
     + '</section>\n'
     + '<section class="secao">\n<h2>Por que escolher o ' + SITE.nome + '?</h2>\n'
     + '<div class="grade4">\n'

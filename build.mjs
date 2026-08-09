@@ -40,7 +40,11 @@ function schemaOrg() {
 
 function head(titulo, desc, path, schema) {
   const url = SITE.dominio + path;
-  const ld = schema ? '\n' + JSON.stringify(schema) : '';
+  const ld = schema
+    ? (Array.isArray(schema) ? schema : [schema])
+        .map((s) => '<script type="application/ld+json">\n' + JSON.stringify(s) + '\n</script>\n')
+        .join('')
+    : '';
   return '<!DOCTYPE html>\n<html lang="pt-BR">\n<head>\n'
     + '<meta charset="UTF-8">\n'
     + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
@@ -62,7 +66,7 @@ function head(titulo, desc, path, schema) {
     + '<meta name="twitter:image" content="' + SITE.dominio + '/imagens/logo.png">\n'
     + '<link rel="icon" type="image/svg+xml" href="/favicon.svg">\n'
     + '<link rel="stylesheet" href="/estilo.css">\n'
-    + (ld ? '<script type="application/ld+json">' + ld + '\n</script>\n' : '')
+    + ld
     + '</head>\n<body>\n';
 }
 

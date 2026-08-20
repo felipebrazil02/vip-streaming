@@ -1920,13 +1920,27 @@ tbody th {
   }
 
   .brand-stage {
-    min-height: 530px;
+    min-height: auto;
+    align-content: start;
     margin-inline: 0;
     padding: 1.5rem;
   }
 
+  .brand-stage::before,
+  .brand-stage::after {
+    display: none;
+  }
+
   .stage-mark {
-    width: min(70vw, 250px);
+    width: min(58vw, 210px);
+    justify-self: center;
+  }
+
+  .stage-label {
+    max-width: none;
+    margin: 2rem 0 1.5rem;
+    font-size: clamp(1.55rem, 7vw, 1.85rem);
+    line-height: 1.05;
   }
 
   .stage-flow {

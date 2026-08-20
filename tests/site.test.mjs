@@ -307,6 +307,19 @@ test('aplica design responsivo, PWA, desempenho e proteção de borda', () => {
   }
 });
 
+test('empilha o painel de clareza sem a grade decorativa no celular', () => {
+  const css = readFileSync(join(DIST, 'assets/site.css'), 'utf8');
+  const mobileStart = css.indexOf('@media (max-width: 720px)');
+  const mobileEnd = css.indexOf('@media (max-width: 440px)', mobileStart);
+  const mobileCss = css.slice(mobileStart, mobileEnd);
+
+  assert.ok(mobileStart >= 0 && mobileEnd > mobileStart, 'CSS: bloco móvel de 720px ausente');
+  assert.match(mobileCss, /\.brand-stage\s*\{[^}]*min-height:\s*auto/si, 'painel móvel: altura deve acompanhar o conteúdo');
+  assert.match(mobileCss, /\.brand-stage::before,\s*\.brand-stage::after\s*\{[^}]*display:\s*none/si, 'painel móvel: grade decorativa não pode atravessar o título');
+  assert.match(mobileCss, /\.stage-mark\s*\{[^}]*justify-self:\s*center/si, 'painel móvel: marca deve ficar centralizada');
+  assert.match(mobileCss, /\.stage-label\s*\{[^}]*max-width:\s*none/si, 'painel móvel: título não deve herdar a largura estreita do desktop');
+});
+
 test('não publica preços, e-mail ou horário sem confirmação do responsável', () => {
   const html = [
     'index.html', 'planos/index.html', 'como-funciona/index.html', 'dispositivos/index.html',

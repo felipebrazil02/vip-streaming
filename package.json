@@ -1,0 +1,15 @@
+{
+  "name": "vip-streaming-site",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site estático SEO-first da Vip Streaming",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test tests/site.test.mjs",
+    "verify": "npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,143 +1,120 @@
-// ============================================================
-// CONFIG CENTRAL DO SITE — edite aqui e rode `node build.mjs`
-// ============================================================
-
 export const SITE = {
   nome: 'Vip Streaming',
-  tagline: 'Serviço de streaming por assinatura',
-  descricao:
-    'Assine o Vip Streaming e tenha entretenimento em alta qualidade em qualquer tela: Smart TV, celular, tablet, TV Box ou computador. Ativação rápida e suporte via WhatsApp.',
-  // TODO: trocar pelo domínio comprado (ex: https://vipstreaming.com.br)
-  dominio: 'https://vip-streaming.netlify.app',
+  url: 'https://vip-streaming.netlify.app',
+  tagline: 'Streaming simples. Atendimento de verdade.',
+  descricao: 'Serviço de streaming por assinatura com planos flexíveis, configuração orientada e atendimento direto pelo WhatsApp.',
   whatsapp: '5511915011527',
   whatsappLabel: '(11) 91501-1527',
-  email: 'contato@vipstreaming.com.br',
-  horario: 'todos os dias, das 8h às 22h',
-  ano: 2026,
+  email: '',
+  atendimento: 'Disponibilidade informada no WhatsApp',
+  idioma: 'pt-BR',
+  pais: 'BR',
+  tema: '#0b0c0f',
+  destaque: '#d7ff45',
+  imagemSocial: '/assets/og-vip-streaming.png',
+  publicadoEm: '2026-08-19',
 };
 
 export const PLANOS = [
   {
     slug: 'mensal',
     nome: 'Mensal',
-    preco: 'R$ 29,90',
-    periodo: 'por mês',
-    destaque: false,
-    beneficios: [
-      'Qualidade HD e 4K',
-      'Acesso em todos os dispositivos',
-      'Ativação em minutos',
-      'Suporte via WhatsApp 7 dias por semana',
-      'Sem fidelidade',
-    ],
+    preco: 'Consultar valor',
+    ciclo: '30 dias',
+    resumo: 'Opção de ciclo mensal com condições confirmadas no atendimento.',
+    beneficios: ['Ciclo mensal', 'Orientação de configuração', 'Atendimento pelo WhatsApp', 'Condições informadas antes do pagamento'],
   },
   {
     slug: 'trimestral',
     nome: 'Trimestral',
-    preco: 'R$ 79,90',
-    periodo: 'a cada 3 meses',
-    destaque: true,
-    beneficios: [
-      'Tudo do plano Mensal',
-      'Equivale a R$ 26,63 por mês',
-      'Prioridade no suporte',
-      'Acesso em todos os dispositivos',
-    ],
+    preco: 'Consultar valor',
+    ciclo: '90 dias',
+    resumo: 'Opção de ciclo trimestral com condições confirmadas no atendimento.',
+    beneficios: ['Ciclo trimestral', 'Orientação de configuração', 'Atendimento pelo WhatsApp', 'Condições informadas antes do pagamento'],
   },
   {
     slug: 'anual',
     nome: 'Anual',
-    preco: 'R$ 279,90',
-    periodo: 'por ano',
-    destaque: false,
-    beneficios: [
-      'Tudo do plano Trimestral',
-      'Equivale a R$ 23,32 por mês',
-      'Melhor custo-benefício',
-      'Suporte VIP',
-    ],
+    preco: 'Consultar valor',
+    ciclo: '12 meses',
+    resumo: 'Opção de ciclo anual com condições confirmadas no atendimento.',
+    beneficios: ['Acesso por 12 meses', 'Orientação de configuração', 'Atendimento pelo WhatsApp', 'Condições informadas antes do pagamento'],
   },
-];
-
-export const DISPOSITIVOS = [
-  { nome: 'Smart TV', detalhe: 'Samsung, LG, TCL, Philco e mais' },
-  { nome: 'TV Box Android', detalhe: 'Qualquer modelo com Android' },
-  { nome: 'Celular e Tablet', detalhe: 'Android e iOS' },
-  { nome: 'Computador', detalhe: 'Windows, Mac e Linux' },
-  { nome: 'Chromecast e Apple TV', detalhe: 'Assista na TV sem fio' },
 ];
 
 export const PASSOS = [
   {
-    titulo: 'Escolha seu plano',
-    texto:
-      'Mensal, trimestral ou anual — sem fidelidade. Você escolhe o que cabe no seu bolso.',
+    titulo: 'Compare os planos',
+    texto: 'Veja os ciclos disponíveis e escolha a opção mais adequada à sua rotina.',
   },
   {
-    titulo: 'Chame no WhatsApp',
-    texto:
-      'Fale com a gente pelo WhatsApp ' +
-      SITE.whatsappLabel +
-      ' e peça seu acesso. Atendimento rápido, todos os dias.',
+    titulo: 'Confirme as condições',
+    texto: 'Fale com o atendimento pelo WhatsApp para confirmar compatibilidade, avaliação e forma de pagamento.',
   },
   {
-    titulo: 'Receba seu acesso',
-    texto:
-      'Em poucos minutos você recebe os dados de acesso e o passo a passo de instalação.',
+    titulo: 'Receba a orientação',
+    texto: 'Após a confirmação, você recebe as instruções necessárias para configurar um dispositivo compatível.',
   },
   {
-    titulo: 'Assista em qualquer tela',
-    texto:
-      'Configure na sua Smart TV, celular, tablet, TV Box ou computador e aproveite.',
+    titulo: 'Comece a usar',
+    texto: 'Siga o passo a passo e, se precisar, chame o suporte durante o horário de atendimento.',
+  },
+];
+
+export const DISPOSITIVOS = [
+  {
+    slug: 'smart-tv',
+    nome: 'Smart TV',
+    resumo: 'Consulte a compatibilidade do modelo e do sistema da sua televisão antes de contratar.',
+  },
+  {
+    slug: 'celular-tablet',
+    nome: 'Celular e tablet',
+    resumo: 'Use um aparelho atualizado e uma conexão estável para uma experiência mais consistente.',
+  },
+  {
+    slug: 'computador',
+    nome: 'Computador',
+    resumo: 'Verifique navegador, sistema operacional e qualidade da internet disponível.',
+  },
+  {
+    slug: 'dispositivo-midia',
+    nome: 'Dispositivo de mídia',
+    resumo: 'A compatibilidade varia por modelo; confirme os requisitos com o atendimento.',
   },
 ];
 
 export const FAQ = [
   {
-    p: 'O que é o Vip Streaming?',
-    r: 'O Vip Streaming é um serviço de streaming por assinatura que leva entretenimento em alta qualidade para a sua casa, em qualquer tela conectada à internet.',
+    pergunta: 'O que é o Vip Streaming?',
+    resposta: 'O Vip Streaming é um serviço de streaming por assinatura com planos por período, orientação de configuração e atendimento direto pelo WhatsApp.',
   },
   {
-    p: 'Quais dispositivos são compatíveis?',
-    r: 'O serviço funciona em Smart TVs (Samsung, LG, TCL, Philco e outras), TV Box Android, celulares e tablets (Android e iOS), computadores, Chromecast e Apple TV.',
+    pergunta: 'Quais dispositivos podem ser compatíveis?',
+    resposta: 'A compatibilidade depende do modelo e do sistema do aparelho. Smart TV, celular, tablet, computador e dispositivos de mídia podem ser avaliados antes da contratação.',
   },
   {
-    p: 'Preciso de antena ou cabo para usar?',
-    r: 'Não. O Vip Streaming funciona 100% pela internet. Basta ter uma conexão estável: recomendamos a partir de 10 Mbps para HD e 25 Mbps para 4K.',
+    pergunta: 'Qual velocidade de internet é necessária?',
+    resposta: 'A necessidade varia conforme o aparelho, a rede doméstica e a qualidade disponível. Uma conexão estável e, quando possível, próxima ao roteador ajuda a evitar interrupções.',
   },
   {
-    p: 'Quanto custa a assinatura?',
-    r: 'Os planos custam a partir de R$ 29,90 por mês, com opções trimestral (R$ 79,90) e anual (R$ 279,90) com melhor custo-benefício.',
+    pergunta: 'Quais são os planos disponíveis?',
+    resposta: 'O site apresenta opções mensal, trimestral e anual. Valores, ciclos e condições devem ser confirmados com o atendimento antes do pagamento.',
   },
   {
-    p: 'Tem período de teste?',
-    r: 'Sim! Oferecemos um período de avaliação para você conhecer o serviço antes de assinar. Solicite pelo WhatsApp e liberamos rapidinho.',
+    pergunta: 'Existe período de avaliação?',
+    resposta: 'A disponibilidade e as condições de avaliação podem variar. Consulte o atendimento pelo WhatsApp antes de contratar.',
   },
   {
-    p: 'Como recebo meu acesso?',
-    r: 'Você chama a gente no WhatsApp, escolhe o plano e recebe os dados de acesso em poucos minutos, junto com o passo a passo de instalação.',
+    pergunta: 'Como funciona o pagamento?',
+    resposta: 'As formas de pagamento disponíveis são informadas no atendimento, junto com o valor final e as condições do plano escolhido.',
   },
   {
-    p: 'Posso usar em mais de um aparelho?',
-    r: 'Sim, a assinatura funciona nos seus dispositivos principais. Em caso de dúvida, nosso suporte te ajuda a configurar todos.',
+    pergunta: 'Como funciona o cancelamento?',
+    resposta: 'As condições dependem do ciclo contratado. Leia os termos apresentados e confirme as regras aplicáveis antes de concluir a contratação.',
   },
   {
-    p: 'Como funciona o suporte?',
-    r: 'Nosso suporte é feito pelo WhatsApp, todos os dias da semana. Qualquer dúvida de instalação ou uso, é só chamar.',
-  },
-  {
-    p: 'Como falo com o Vip Streaming?',
-    r:
-      'Pelo WhatsApp ' +
-      SITE.whatsappLabel +
-      ' ou pelo e-mail ' +
-      SITE.email +
-      '. Atendimento ' +
-      SITE.horario +
-      '.',
-  },
-  {
-    p: 'Preciso pagar algo além da assinatura?',
-    r: 'Não. A assinatura cobre o serviço completo. Você só precisa de uma conexão de internet para assistir.',
+    pergunta: 'Como recebo suporte?',
+    resposta: 'O suporte é realizado pelo WhatsApp conforme a disponibilidade informada no atendimento. Envie o aparelho e uma descrição clara da dúvida.',
   },
 ];
